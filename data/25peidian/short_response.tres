@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PicGroup" load_steps=3 format=3 uid="uid://cn15gejr2isl3"]
+
+[ext_resource type="Script" uid="uid://notj2vx8bc12" path="res://scripts/pic_res/pic_unit.gd" id="1_tf10o"]
+[ext_resource type="Script" uid="uid://ka31xqrsg1bl" path="res://scripts/pic_res/pic_group.gd" id="2_lgkrt"]
+
+[resource]
+script = ExtResource("2_lgkrt")
+metadata/_custom_type_script = "uid://ka31xqrsg1bl"

@@ -1,0 +1,189 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbvalc6dklj1d"]
+
+[ext_resource type="Script" uid="uid://c41yirxji8srx" path="res://scenes/edit_json/tab_container.gd" id="1_fr51v"]
+[ext_resource type="Script" uid="uid://81rndw33hqfv" path="res://scenes/edit_json/add_v_box.gd" id="1_xogk4"]
+[ext_resource type="Script" uid="uid://contxtljmxeen" path="res://scenes/edit_json/delete_scroll.gd" id="2_bgobq"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fr51v"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[node name="EditJson" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+theme_override_styles/tab_selected = SubResource("StyleBoxLine_fr51v")
+current_tab = 0
+drag_to_rearrange_enabled = true
+deselect_enabled = true
+script = ExtResource("1_fr51v")
+
+[node name="AddVBox" type="VBoxContainer" parent="TabContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("1_xogk4")
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/AddVBox"]
+layout_mode = 2
+
+[node name="CurrentJson" type="Label" parent="TabContainer/AddVBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ConfirmAdd" type="Button" parent="TabContainer/AddVBox/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "确认添加"
+
+[node name="Exit" type="Button" parent="TabContainer/AddVBox/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "返回
+"
+
+[node name="Type" type="HBoxContainer" parent="TabContainer/AddVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Type" type="Label" parent="TabContainer/AddVBox/Type"]
+layout_mode = 2
+text = "题型"
+
+[node name="TypeEdit" type="TextEdit" parent="TabContainer/AddVBox/Type"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Stem" type="HBoxContainer" parent="TabContainer/AddVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stem" type="Label" parent="TabContainer/AddVBox/Stem"]
+layout_mode = 2
+text = "题干"
+
+[node name="StemEdit" type="TextEdit" parent="TabContainer/AddVBox/Stem"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuestionOrder" type="HBoxContainer" parent="TabContainer/AddVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="QuestionOrder" type="Label" parent="TabContainer/AddVBox/QuestionOrder"]
+layout_mode = 2
+text = "题号"
+
+[node name="QuestionOrderEdit" type="TextEdit" parent="TabContainer/AddVBox/QuestionOrder"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Chapter" type="HBoxContainer" parent="TabContainer/AddVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ChapterTitle" type="Label" parent="TabContainer/AddVBox/Chapter"]
+layout_mode = 2
+text = "章节名"
+
+[node name="ChapterTitleEdit" type="TextEdit" parent="TabContainer/AddVBox/Chapter"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Order" type="HBoxContainer" parent="TabContainer/AddVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Order" type="Label" parent="TabContainer/AddVBox/Order"]
+layout_mode = 2
+text = "序号"
+
+[node name="OrderEdit" type="TextEdit" parent="TabContainer/AddVBox/Order"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Content" type="HBoxContainer" parent="TabContainer/AddVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Content" type="Label" parent="TabContainer/AddVBox/Content"]
+layout_mode = 2
+text = "选项内容"
+
+[node name="ContentEdit" type="TextEdit" parent="TabContainer/AddVBox/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Answer" type="HBoxContainer" parent="TabContainer/AddVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Answer" type="Label" parent="TabContainer/AddVBox/Answer"]
+layout_mode = 2
+text = "答案"
+
+[node name="AnswerEdit" type="TextEdit" parent="TabContainer/AddVBox/Answer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Custom" type="HBoxContainer" parent="TabContainer/AddVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CustomKey" type="TextEdit" parent="TabContainer/AddVBox/Custom"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CustomValue" type="TextEdit" parent="TabContainer/AddVBox/Custom"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DeleteScroll" type="ScrollContainer" parent="TabContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_bgobq")
+metadata/_tab_index = 1
+
+[node name="ButtonVBox" type="VBoxContainer" parent="TabContainer/DeleteScroll"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 2000)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Exit" type="Button" parent="TabContainer/DeleteScroll/ButtonVBox"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "返回"
+alignment = 0
+
+[connection signal="pressed" from="TabContainer/AddVBox/HBoxContainer/ConfirmAdd" to="TabContainer/AddVBox" method="_on_confirm_add_pressed"]
+[connection signal="pressed" from="TabContainer/AddVBox/HBoxContainer/Exit" to="TabContainer/AddVBox" method="_on_exit_pressed"]
+[connection signal="pressed" from="TabContainer/DeleteScroll/ButtonVBox/Exit" to="TabContainer/DeleteScroll" method="_on_exit_pressed"]

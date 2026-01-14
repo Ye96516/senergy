@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cm4r4fygerucx"]
+
+[ext_resource type="FontFile" uid="uid://dqq7rmt5to3cv" path="res://data/LXGWZhenKaiGB-Regular.ttf" id="1_8jvv3"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8jvv3"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[resource]
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_8jvv3")
+Label/font_sizes/font_size = 48
+Label/fonts/font = ExtResource("1_8jvv3")
+LineEdit/font_sizes/font_size = 48
+LineEdit/fonts/font = ExtResource("1_8jvv3")
+RichTextLabel/font_sizes/normal_font_size = 48
+RichTextLabel/fonts/normal_font = ExtResource("1_8jvv3")
+TabContainer/font_sizes/font_size = 48
+TabContainer/fonts/font = ExtResource("1_8jvv3")
+TabContainer/styles/tab_selected = SubResource("StyleBoxLine_8jvv3")
+TextEdit/font_sizes/font_size = 48
