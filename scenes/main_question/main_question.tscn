@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://lluhaol407ou"]
+
+[ext_resource type="Script" uid="uid://ddqt2a3pud6iv" path="res://scenes/main_question/main_question.gd" id="1_ntwhn"]
+[ext_resource type="PackedScene" uid="uid://conhr3w2q072f" path="res://scenes/header/header.tscn" id="1_tv53d"]
+[ext_resource type="PackedScene" uid="uid://slu5jjyisiqw" path="res://scenes/abstract_mod/stem/stem.tscn" id="2_itgnc"]
+[ext_resource type="PackedScene" uid="uid://j80qh8a6d5mq" path="res://scenes/abstract_mod/option_content/option_content.tscn" id="3_ntwhn"]
+[ext_resource type="PackedScene" uid="uid://bavpmbfwwlfev" path="res://scenes/abstract_mod/last_next/last_next.tscn" id="3_ujlrq"]
+[ext_resource type="PackedScene" uid="uid://b0sh0h20wvan1" path="res://scenes/abstract_mod/answer/answer.tscn" id="5_s7wk4"]
+
+[node name="MainQuestion" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ntwhn")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Header" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_tv53d")]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Stem" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_itgnc")]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="OptionCotent" type="MarginContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="Optioncontent" parent="ScrollContainer/VBoxContainer/OptionCotent" instance=ExtResource("3_ntwhn")]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Answer" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_s7wk4")]
+layout_mode = 2
+bbcode_enabled = true
+text = "12311111111111111111111111111111111111111111111111"
+fit_content = true
+
+[node name="Control3" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="LastNext" parent="." node_paths=PackedStringArray("answer") instance=ExtResource("3_ujlrq")]
+layout_mode = 1
+offset_top = 1085.0
+offset_bottom = 1201.0
+answer = NodePath("../ScrollContainer/VBoxContainer/Answer")

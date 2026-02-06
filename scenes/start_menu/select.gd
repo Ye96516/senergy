@@ -3,7 +3,7 @@ extends Button
 var selected_path:String
 
 @onready var add_file: FileDialog = %AddFile
-@onready var select_file: FileDialog = %SelectFile
+@onready var select_file: FileDialog = %Modify
 
 
 func _ready() -> void:

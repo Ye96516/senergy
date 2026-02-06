@@ -7,12 +7,16 @@ color = Color(1, 1, 1, 1)
 thickness = 6
 
 [resource]
+default_font = ExtResource("1_8jvv3")
+default_font_size = 32
 Button/font_sizes/font_size = 48
 Button/fonts/font = ExtResource("1_8jvv3")
 Label/font_sizes/font_size = 48
 Label/fonts/font = ExtResource("1_8jvv3")
 LineEdit/font_sizes/font_size = 48
 LineEdit/fonts/font = ExtResource("1_8jvv3")
+PopupMenu/font_sizes/font_size = 32
+PopupMenu/fonts/font = ExtResource("1_8jvv3")
 RichTextLabel/font_sizes/normal_font_size = 48
 RichTextLabel/fonts/normal_font = ExtResource("1_8jvv3")
 TabContainer/font_sizes/font_size = 48

@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://conhr3w2q072f"]
+
+[ext_resource type="Script" uid="uid://bfphewnaq75dx" path="res://scenes/header/header.gd" id="1_cuq0p"]
+[ext_resource type="Script" uid="uid://cip4y0yigc7g4" path="res://scenes/header/setting.gd" id="2_6k04t"]
+
+[node name="Header" type="Control"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+offset_bottom = -1125.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_cuq0p")
+return_path = "uid://coa2ptf6mmmlk"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Return" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "返回"
+
+[node name="Setting" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "设置"
+
+[node name="ChapterName" type="RichTextLabel" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Setting" type="Panel" parent="."]
+visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1130.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_6k04t")
+
+[node name="SelectType" type="OptionButton" parent="Setting"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 107.0
+offset_right = 161.0
+offset_bottom = 187.0
+item_count = 5
+popup/item_0/text = "单选题"
+popup/item_0/id = 0
+popup/item_1/text = "多选题"
+popup/item_1/id = 1
+popup/item_2/text = "判断题"
+popup/item_2/id = 2
+popup/item_3/text = "简答题"
+popup/item_3/id = 3
+popup/item_4/text = "填空题"
+popup/item_4/id = 4
+
+[node name="IsShowAnswer" type="CheckButton" parent="Setting"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 242.00002
+offset_right = 215.0
+offset_bottom = 307.5
+scale = Vector2(3, 3)
+text = "显示答案"
+
+[connection signal="pressed" from="HBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="HBoxContainer/Setting" to="." method="_on_setting_pressed"]
+[connection signal="gui_input" from="Setting" to="Setting" method="_on_gui_input"]
+[connection signal="item_selected" from="Setting/SelectType" to="Setting" method="_on_select_type_item_selected"]
+[connection signal="gui_input" from="Setting/IsShowAnswer" to="Setting" method="_on_is_show_answer_gui_input"]
+[connection signal="toggled" from="Setting/IsShowAnswer" to="Setting" method="_on_is_show_answer_toggled"]

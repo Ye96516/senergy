@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://slu5jjyisiqw"]
+
+[ext_resource type="Script" uid="uid://7rmnekfor446" path="res://scenes/abstract_mod/stem/stem.gd" id="1_5hh2n"]
+
+[node name="StemText" type="RichTextLabel"]
+offset_right = 626.0
+offset_bottom = 107.0
+bbcode_enabled = true
+text = "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+fit_content = true
+script = ExtResource("1_5hh2n")

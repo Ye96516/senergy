@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bavpmbfwwlfev"]
+
+[ext_resource type="Script" uid="uid://bcrc0s1fo7vko" path="res://scenes/abstract_mod/last_next/last_next.gd" id="1_gsfoh"]
+
+[node name="LastNext" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 116)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 66.0
+grow_horizontal = 2
+script = ExtResource("1_gsfoh")
+
+[node name="Last" type="Button" parent="."]
+layout_mode = 2
+text = "上一题"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ShowAnswer" type="Button" parent="."]
+layout_mode = 2
+text = "显示答案"
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 2
+text = "下一题"
+
+[connection signal="pressed" from="Last" to="." method="_on_last_pressed"]
+[connection signal="pressed" from="ShowAnswer" to="." method="_on_show_answer_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
