@@ -56,7 +56,7 @@ func _on_multiple_pressed(content:String,button:Button):
 		if number==Global.current_question.答案.length():
 			Global.answered_correctly.emit()
 		button.modulate=Color.AQUAMARINE
-	else:
+	elif content[0] not in Global.current_question.答案:
 		button.modulate=Color.BROWN
 		Global.answered_incorrectly.emit()
 

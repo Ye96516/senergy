@@ -34,7 +34,6 @@ mouse_filter = 2
 
 [node name="Header" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_tv53d")]
 layout_mode = 2
-mouse_filter = 2
 
 [node name="Control" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
